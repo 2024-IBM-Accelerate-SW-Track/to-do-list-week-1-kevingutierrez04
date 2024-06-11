@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "../components/AddTodo.js"
-import "../components/todos.js"
+import Todos from  "../component/todos"
 import "./Home.css";
 import AddTodo from "../component/AddTodo";
 
@@ -10,7 +9,7 @@ class Home extends Component {
     super();
     this.state = {
       // create your empty list here call it todos.
-      todos: [], // broken idk why
+      todos: [], // broken?
     };
   }
   // the addTodo function simply creates a new array that includes the user submitted todo item and then
@@ -32,9 +31,9 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <Todos todos = { this.state } /> 
-        <AddTodo addTodo = {this.addTodo()} />
         <h1>Todo's </h1>
+        <Todos todos = { this.state.todos } /> 
+        <AddTodo addTodo = {this.addTodo} /> 
       </div>
     );
   }
